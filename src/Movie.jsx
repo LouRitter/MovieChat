@@ -13,8 +13,11 @@ class Movie extends React.Component {
                     <Card.Subtitle className="year">{year}</Card.Subtitle>
                 </div>
                </Card.Body>
-               
+
                    <Card.Img src={image.url} alt="my movie poster"/>
+
+                   <Button variant="primary">Chat About It</Button>
+
            </Card>
        )
    }
