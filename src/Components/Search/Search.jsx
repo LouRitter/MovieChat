@@ -3,7 +3,7 @@ import "./Search.css";
 
 class Search extends React.Component {
    state= {
-       title: 'Avengers'
+       title: ''
    }
    handleSubmit = () => {
        const {title} = this.state;

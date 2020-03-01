@@ -16,7 +16,7 @@ class Movie extends React.Component {
 
                    <Card.Img src={image.url} alt="my movie poster"/>
 
-                   <Button variant="primary">Chat About It</Button>
+                   <input className="chatbutton" type="submit" onClick={this.handleSubmit} value="Chat About It"/>
 
            </Card>
        )

@@ -17,6 +17,14 @@
    width: auto;
    max-height: 500px;
 }
-.btn{
+
+.chatbutton{
    width: 100%;
+   background-color: #6A8D92;
+   border: none;
+   height:40px;
+   color: #fff;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+
 }
