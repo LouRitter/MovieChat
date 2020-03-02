@@ -1,10 +1,11 @@
 import React from 'react';
 import "./Movie.css";
+import {Switch, Link} from "react-router-dom"
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 class Movie extends React.Component {
    render() {
-       const {title, image, year} = this.props;
+       const {title, id,image, year} = this.props;
        return (
            <Card style={{ width: '18rem', backgroundColor: '#282c34' }} className="movie">
                <Card.Body>
@@ -15,9 +16,11 @@ class Movie extends React.Component {
                </Card.Body>
 
                    <Card.Img src={image.url} alt="my movie poster"/>
-
-                   <input className="chatbutton" type="submit" onClick={this.handleSubmit} value="Chat About It"/>
-
+                   <Link to={`/movies${id}`}>
+                        <Button className="chatbutton">
+                            <span>Chat About It</span>
+                        </Button>
+                    </Link>
            </Card>
        )
    }

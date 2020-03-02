@@ -80,6 +80,7 @@ class App extends React.Component {
 
   </Navbar.Collapse>
   </Navbar>
+  
        <header className="App-header">
       <h1>Search For A Movie</h1>
       <Search handleSendRequest={this.sendRequest}/>
@@ -89,6 +90,7 @@ class App extends React.Component {
        <CardColumns>
        {
 
+        // eslint-disable-next-line array-callback-return
         this.state.movies.map((movie) => {
           if(movie.image && movie.title ){
             return <Movie {...movie}/>
