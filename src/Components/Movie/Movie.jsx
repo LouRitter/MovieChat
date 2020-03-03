@@ -16,7 +16,15 @@ class Movie extends React.Component {
                </Card.Body>
 
                    <Card.Img src={image.url} alt="my movie poster"/>
-                   <Link to={`/movies${id}`}>
+                   <Link to={{
+                            pathname: `movies${id}`,
+                            state: {
+                                title: {title},
+                                id: {id},
+                                image: {image}, 
+                                year: {year}
+                            }
+                    }}>
                         <Button className="chatbutton">
                             <span>Chat About It</span>
                         </Button>

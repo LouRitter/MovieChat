@@ -37,7 +37,6 @@ class App extends React.Component {
    });
    req.end((res) => {
     if (res.error) throw new Error(res.error);
-    console.log(res.body.results);
     const movies = res.body.results;
     
     this.setState({movies});
@@ -80,7 +79,6 @@ class App extends React.Component {
 
   </Navbar.Collapse>
   </Navbar>
-  
        <header className="App-header">
       <h1>Search For A Movie</h1>
       <Search handleSendRequest={this.sendRequest}/>
