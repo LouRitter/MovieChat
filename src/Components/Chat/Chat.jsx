@@ -1,9 +1,22 @@
 import React from 'react';
 import unirest from 'unirest';
+import './Chat.css';
+import Navbar from 'react-bootstrap/Navbar';
+
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../../firebaseConfig';
+
+
+
 
 class Chat extends React.Component {
     state = {
-        details: []
+        title: { },
+        image:{ },
+        plotOutline:{},
+        id: {}
     }
     sendRequest = (id) => {
         var req = unirest("GET", "https://imdb8.p.rapidapi.com/title/get-overview-details");
@@ -17,12 +30,13 @@ class Chat extends React.Component {
        "x-rapidapi-key": "GJnF3zwATmmshyz03tiXO7Rg13v6p1RDW2bjsnKV4XqoYfWoRj"
       });
       req.end((res) => {
-        console.log(id);
        if (res.error) throw new Error(res.error);
-       console.log(res.body);
-       const details = res.body.body;
-       
-       this.setState({details});
+       const details = res.body;
+       console.log(details);
+       this.setState({title: details.title,
+        image: details.image, 
+        plotOutline: details.plotOutline, 
+        id: details.id});
      });
      
     }
@@ -33,8 +47,42 @@ class Chat extends React.Component {
     }
 
     render() {
-      return (<h1>Hello, {this.props.title}</h1>);
-      
+        const title = this.state.title
+        console.log(title.title);
+        return (
+
+            <div className = "Chat">
+                <Navbar bg="dark" variant="dark">
+    <Navbar.Brand href="#home">
+      <img
+        src={require('../../movietalk.png')} 
+        width="auto"
+        height="60"
+        className="d-inline-block align-top"
+        alt="React Bootstrap logo"
+      />
+    </Navbar.Brand>
+    <Navbar.Toggle />
+  <Navbar.Collapse className="justify-content-end">
+
+
+    <Navbar.Text className ="accounttext">
+
+      {
+        this.props.user
+          ? <p>Hello, {this.props.user.displayName}</p>
+
+          : <button className="signinout" onClick={this.props.signInWithGoogle}>Sign in with Google</button>
+          
+      }    
+    </Navbar.Text>
+
+  </Navbar.Collapse>
+  </Navbar>
+            <h1>{title.title}</h1>
+            </div>
+        );
+
     }
   }
 
