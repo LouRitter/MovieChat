@@ -1,0 +1,12 @@
+.signinout{
+    background-color: #6A8D92;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+  .logo{
+    width: 200px;
+  }
+  .accounttext a{
+    color:white;
+  }

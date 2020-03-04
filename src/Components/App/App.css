@@ -18,12 +18,6 @@ html{
   }
 }
 
-.signinout{
-  background-color: #6A8D92;
-  border: none;
-  border-radius: 5px;
-  color: white;
-}
 
 .App-header {
   background-color: #717C89;
@@ -43,12 +37,7 @@ html{
 .btn{
   background-color: #6A8D92;
 }
-.logo{
-  width: 200px;
-}
-.accounttext a{
-  color:white;
-}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

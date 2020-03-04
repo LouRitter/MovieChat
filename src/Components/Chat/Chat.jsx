@@ -1,20 +1,13 @@
 import React from 'react';
 import unirest from 'unirest';
 import './Chat.css';
-import Navbar from 'react-bootstrap/Navbar';
 
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig';
-
-
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 
 class Chat extends React.Component {
     state = {
-        title: { },
-        image:{ },
+        title: { title:'Please Wait', image:{ url:'https://via.placeholder.com/300x500'}},
         plotOutline:{},
         id: {}
     }
@@ -35,7 +28,7 @@ class Chat extends React.Component {
        console.log(details);
        this.setState({title: details.title,
         image: details.image, 
-        plotOutline: details.plotOutline, 
+        plotOutline: details.plotSummary, 
         id: details.id});
      });
      
@@ -49,38 +42,20 @@ class Chat extends React.Component {
     render() {
         const title = this.state.title
         console.log(title.title);
+    
         return (
-
+            <Jumbotron className="Jumbo">
             <div className = "Chat">
-                <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">
-      <img
-        src={require('../../movietalk.png')} 
-        width="auto"
-        height="60"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-      />
-    </Navbar.Brand>
-    <Navbar.Toggle />
-  <Navbar.Collapse className="justify-content-end">
+                <h1>{title.title}</h1>
+                <div className='row'>
+                <div className="imgholder col-md-4">
+                <img className='poster' src={title.image.url} alt="poster"/>
+                </div>
+                <span className='col-md-8'>{this.state.plotOutline.text}</span>
 
-
-    <Navbar.Text className ="accounttext">
-
-      {
-        this.props.user
-          ? <p>Hello, {this.props.user.displayName}</p>
-
-          : <button className="signinout" onClick={this.props.signInWithGoogle}>Sign in with Google</button>
-          
-      }    
-    </Navbar.Text>
-
-  </Navbar.Collapse>
-  </Navbar>
-            <h1>{title.title}</h1>
+                </div>
             </div>
+            </Jumbotron>
         );
 
     }

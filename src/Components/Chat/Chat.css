@@ -1,10 +1,28 @@
 html{
     background-color: #1C3144;
   }
-  
+  .Jumbo{
+    background-color: #1C3144 !important;
+  }
   .Chat {
-    text-align: center;
-    background-color: #1C3144 ;
+   margin-left: 5vw;
     color: floralwhite;
   }
-  
+  .Chat h1{
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .poster{
+      border-radius: 5%;
+      width: auto;
+      max-height: 100%;
+  }
+  .row{
+    max-height: 300px;
+  }
+  .imgholder{
+    max-height: 300px;
+    padding-bottom: 20px;
+    text-align: center;
+    max-height: auto;
+  }

@@ -5,20 +5,7 @@ import Movie from "../Movie/Movie.jsx";
 import Search from "../Search/Search.jsx";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import CardColumns from 'react-bootstrap/CardColumns';
-import Navbar from 'react-bootstrap/Navbar';
 
-import withFirebaseAuth from 'react-with-firebase-auth'
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig';
-
-
-
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
-const providers = {
-  googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
 
 class App extends React.Component {
 
@@ -44,41 +31,11 @@ class App extends React.Component {
   
  }
  render() {
-  const {
-    user,
-    signOut,
-    signInWithGoogle,
-  } = this.props;
+
    return (
 
      <div className="App">
-    <Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home">
-      <img
-        src={require('../../movietalk.png')} 
-        width="auto"
-        height="60"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-      />
-    </Navbar.Brand>
-    <Navbar.Toggle />
-  <Navbar.Collapse className="justify-content-end">
-
-
-    <Navbar.Text className ="accounttext">
-
-      {
-        user
-          ? <p>Hello, {user.displayName}</p>
-
-          : <button className="signinout" onClick={signInWithGoogle}>Sign in with Google</button>
-          
-      }    
-    </Navbar.Text>
-
-  </Navbar.Collapse>
-  </Navbar>
+   
        <header className="App-header">
       <h1>Search For A Movie</h1>
       <Search handleSendRequest={this.sendRequest}/>
@@ -103,7 +60,4 @@ class App extends React.Component {
    
  }
 }
-export default withFirebaseAuth({
-  providers,
-  firebaseAppAuth,
-})(App);
+export default App;
