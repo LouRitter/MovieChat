@@ -22,8 +22,8 @@ class Navigation extends React.Component {
       signInWithGoogle,
     } = this.props;
      return (
-      <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home">
+      <Navbar bg="dark" variant="dark" className="navbar">
+      <Navbar.Brand href="/">
         <img
           src={require('../../movietalk.png')} 
           width="auto"

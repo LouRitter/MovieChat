@@ -2,26 +2,51 @@ html{
     background-color: #1C3144;
   }
   .Jumbo{
-    background-color: #1C3144 !important;
+    background-color: rgba(30, 30, 30, 0.4) !important;
+    margin: 5%;
+    border-color: rgb(184, 115, 11) !important ;
+    border: solid;
   }
   .Chat {
    margin-left: 5vw;
     color: floralwhite;
   }
   .Chat h1{
-    text-align: center;
     padding-bottom: 30px;
+  }
+  .dots{
+    font-size: 8px !important;
+    margin-left: 5px;
+    background-color: transparent !important;
+    border-color: rgb(184, 115, 11) !important ;
+  }
+  .showMoreButton{
+    font-size: 8px !important;
+    margin-left: 5px;
+    background-color: transparent !important;
+    border-color: rgb(184, 115, 11) !important ;
   }
   .poster{
       border-radius: 5%;
       width: auto;
       max-height: 100%;
   }
-  .row{
-    max-height: 300px;
+  .details{
+    padding-bottom: 30px;
   }
+  .genre{
+    display: inline !important;
+  }
+  .plotRow{
+    margin-left:0 !important;
+    margin-right: 100px !important;
+  }
+  .genreList{
+    float:left;
+  }
+
   .imgholder{
-    max-height: 300px;
+    max-height: 400px;
     padding-bottom: 20px;
     text-align: center;
     max-height: auto;

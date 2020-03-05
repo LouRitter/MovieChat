@@ -3,13 +3,17 @@ import unirest from 'unirest';
 import './Chat.css';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
-
+import Button from 'react-bootstrap/Button';
 
 class Chat extends React.Component {
+    handleToggleClick = this.handleToggleClick.bind(this);
     state = {
         title: { title:'Please Wait', image:{ url:'https://via.placeholder.com/300x500'}},
         plotOutline:{},
-        id: {}
+        id: {},
+        genres: [],
+        showMore: false,
+
     }
     sendRequest = (id) => {
         var req = unirest("GET", "https://imdb8.p.rapidapi.com/title/get-overview-details");
@@ -29,10 +33,19 @@ class Chat extends React.Component {
        this.setState({title: details.title,
         image: details.image, 
         plotOutline: details.plotSummary, 
-        id: details.id});
+        id: details.id,
+        genres: details.genres
+        });
      });
      
     }
+
+    handleToggleClick() {
+        this.setState(state => ({
+          showMore: !state.showMore
+        }));
+      }
+
     componentDidMount(){
         var id = this.props.location.state.id.id.replace("/title/","");
         id = id.replace('/','');
@@ -40,22 +53,52 @@ class Chat extends React.Component {
     }
 
     render() {
-        const title = this.state.title
+        const title = this.state.title;
+
         console.log(title.title);
-    
+        let  shortPlot = "";
+
+        if(this.state.plotOutline.text != null && this.state.plotOutline.text.length > 150){
+            shortPlot = this.state.plotOutline.text.substring(0, this.state.plotOutline.text.indexOf(".") +1);
+
+        }else{
+            shortPlot = this.state.plotOutline.text;
+        }
+
+        const listItems = this.state.genres.map((genre) =>
+        <li className="genre">{genre}, </li>
+        );
         return (
-            <Jumbotron className="Jumbo">
             <div className = "Chat">
-                <h1>{title.title}</h1>
+                <Jumbotron className="Jumbo">
+
                 <div className='row'>
                 <div className="imgholder col-md-4">
                 <img className='poster' src={title.image.url} alt="poster"/>
                 </div>
-                <span className='col-md-8'>{this.state.plotOutline.text}</span>
+                <div className='col-md-8'>
+                <h1>{title.title} ({title.year}) </h1>
+                <div className="row plotRow">
+                {this.state.showMore ? ( 
+
+                    <span className='details'>{this.state.plotOutline.text} 
+                    <Button className="showMoreButton btn-xs" onClick={this.handleToggleClick}>Show Less</Button>
+                    </span>
+
+                ) : (
+                    <span className ="details" >{shortPlot} 
+                    <Button className="dots" onClick={this.handleToggleClick}>...</Button>
+                    </span>
+                )}
+                </div>
+                    <span className="genreList">Genres: {listItems}</span>
 
                 </div>
+                </div>
+
+                </Jumbotron>
+
             </div>
-            </Jumbotron>
         );
 
     }
