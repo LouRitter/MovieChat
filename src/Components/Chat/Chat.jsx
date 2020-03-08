@@ -1,17 +1,18 @@
 import React from 'react';
 import unirest from 'unirest';
 import './Chat.css';
-
+import Comments from '../Comments/Comments'
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 
 class Chat extends React.Component {
     handleToggleClick = this.handleToggleClick.bind(this);
     state = {
-        title: { title:'Please Wait', image:{ url:'https://via.placeholder.com/300x500'}},
+        title: { title:'Please Wait', image:{ url:'https://imgplaceholder.com/330x500/303030'}},
         plotOutline:{},
         id: {},
         genres: [],
+        ratings: {},
         showMore: false,
 
     }
@@ -30,11 +31,13 @@ class Chat extends React.Component {
        if (res.error) throw new Error(res.error);
        const details = res.body;
        console.log(details);
-       this.setState({title: details.title,
-        image: details.image, 
-        plotOutline: details.plotSummary, 
-        id: details.id,
-        genres: details.genres
+       this.setState({
+            title: details.title,
+            image: details.image, 
+            plotOutline: details.plotSummary, 
+            id: details.id,
+            genres: details.genres,
+            ratings: details.ratings
         });
      });
      
@@ -91,13 +94,15 @@ class Chat extends React.Component {
                     </span>
                 )}
                 </div>
-                    <span className="genreList">Genres: {listItems}</span>
-
+                <div className="row">
+                    <span className="genreList col-md-6"><b>Genres:</b> {listItems}</span>
+                    <span className="genreList col-md-6"><b>Rating:</b> {this.state.ratings.rating}</span>
+                </div>
                 </div>
                 </div>
 
                 </Jumbotron>
-
+                <Comments></Comments>
             </div>
         );
 

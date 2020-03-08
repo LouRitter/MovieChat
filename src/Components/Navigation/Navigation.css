@@ -1,6 +1,8 @@
 .signinout{
-    background-color: #6A8D92;
-    border: none;
+    background-color: transparent;
+    border: solid;
+    border-width: 1px;
+    border-color: rgb(184, 115, 11) !important ;
     border-radius: 5px;
     color: white;
   }

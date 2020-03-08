@@ -4,23 +4,22 @@ import './Navigation.css';
 import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig';
 
 
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
+
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 
 class Navigation extends React.Component {
   render() {
-    const {
-      user,
-      signOut,
-      signInWithGoogle,
-    } = this.props;
+    // const {
+    //   user,
+    //   signOut,
+    //   signInWithGoogle,
+    // } = this.props;
+
      return (
       <Navbar bg="dark" variant="dark" className="navbar">
       <Navbar.Brand href="/">
@@ -38,20 +37,15 @@ class Navigation extends React.Component {
   
       <Navbar.Text className ="accounttext">
   
-        {
-          user
-            ? <p>Hello, {user.displayName}</p>
-  
-            : <button className="signinout" onClick={signInWithGoogle}>Sign in with Google</button>
-            
-        }    
+      {this.props.user ?
+        <button className="signinout" onClick={this.props.logout}>Log Out</button>                
+        :
+        <button className="signinout" onClick={this.props.login}>Log In</button>              
+      }
       </Navbar.Text>
   
     </Navbar.Collapse>
     </Navbar>
      )
      }
-    } export default withFirebaseAuth({
-      providers,
-      firebaseAppAuth,
-    })(Navigation);
+    } export default Navigation; 

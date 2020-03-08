@@ -10,7 +10,8 @@ import CardColumns from 'react-bootstrap/CardColumns';
 class App extends React.Component {
 
   state = {
-     movies: []
+     movies: [],
+     user: null 
  }
  sendRequest = (title) => {
   var req = unirest("GET", "https://imdb8.p.rapidapi.com/title/find");
