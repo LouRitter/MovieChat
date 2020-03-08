@@ -8,38 +8,43 @@ import Button from 'react-bootstrap/Button';
 class Chat extends React.Component {
     handleToggleClick = this.handleToggleClick.bind(this);
     state = {
-        title: { title:'Please Wait', image:{ url:'https://imgplaceholder.com/330x500/303030'}},
-        plotOutline:{},
-        id: {},
-        genres: [],
-        ratings: {},
+        title: "",
+        image: "",
+        year: "",
+        plotOutline:"",
+        id: "",
+        genres: "",
+        ratings: "",
         showMore: false,
 
     }
-    sendRequest = (id) => {
-        var req = unirest("GET", "https://imdb8.p.rapidapi.com/title/get-overview-details");
+    sendRequest = (imdbID) => {
+        var request = require("request");
 
-        req.query({
-            "tconst": id
-        });
+        var options = {
+          method: 'GET',
+          url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
+          qs: {i: imdbID, r: 'json'},
+          headers: {
+            'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
+            'x-rapidapi-key': 'GJnF3zwATmmshyz03tiXO7Rg13v6p1RDW2bjsnKV4XqoYfWoRj'
+          }
+        };
         
-      req.headers({
-       "x-rapidapi-host": "imdb8.p.rapidapi.com",
-       "x-rapidapi-key": "GJnF3zwATmmshyz03tiXO7Rg13v6p1RDW2bjsnKV4XqoYfWoRj"
-      });
-      req.end((res) => {
-       if (res.error) throw new Error(res.error);
-       const details = res.body;
-       console.log(details);
-       this.setState({
-            title: details.title,
-            image: details.image, 
-            plotOutline: details.plotSummary, 
-            id: details.id,
-            genres: details.genres,
-            ratings: details.ratings
-        });
-     });
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            const object = JSON.parse(body);
+                console.log(object);
+                this.setState({
+                        title: object.Title,
+                        year: object.Year,
+                        image: object.Poster, 
+                        plotOutline: object.Plot, 
+                        id: object.imdbID,
+                        genres: object.Genre,
+                        ratings: object.imdbRating 
+                    });
+     }.bind(this));
      
     }
 
@@ -50,15 +55,14 @@ class Chat extends React.Component {
       }
 
     componentDidMount(){
-        var id = this.props.location.state.id.id.replace("/title/","");
-        id = id.replace('/','');
-        this.sendRequest(id);
+        var id = this.props.location.state.imdbID;
+        console.log(id)
+        this.sendRequest(id.imdbID);
     }
 
     render() {
         const title = this.state.title;
-
-        console.log(title.title);
+        
         let  shortPlot = "";
 
         if(this.state.plotOutline.text != null && this.state.plotOutline.text.length > 150){
@@ -68,23 +72,20 @@ class Chat extends React.Component {
             shortPlot = this.state.plotOutline.text;
         }
 
-        const listItems = this.state.genres.map((genre) =>
-        <li className="genre">{genre}, </li>
-        );
         return (
             <div className = "Chat">
                 <Jumbotron className="Jumbo">
 
                 <div className='row'>
                 <div className="imgholder col-md-4">
-                <img className='poster' src={title.image.url} alt="poster"/>
+                <img className='poster' src={this.state.image} alt="poster"/>
                 </div>
                 <div className='col-md-8'>
-                <h1>{title.title} ({title.year}) </h1>
+                <h1>{title} ({this.state.year}) </h1>
                 <div className="row plotRow">
                 {this.state.showMore ? ( 
 
-                    <span className='details'>{this.state.plotOutline.text} 
+                    <span className='details'>{this.state.plotOutline} 
                     <Button className="showMoreButton btn-xs" onClick={this.handleToggleClick}>Show Less</Button>
                     </span>
 
@@ -95,8 +96,8 @@ class Chat extends React.Component {
                 )}
                 </div>
                 <div className="row">
-                    <span className="genreList col-md-6"><b>Genres:</b> {listItems}</span>
-                    <span className="genreList col-md-6"><b>Rating:</b> {this.state.ratings.rating}</span>
+                    <span className="genreList col-md-6"><b>Genres:</b> {this.state.genres}</span>
+                    <span className="genreList col-md-6"><b>Rating:</b> {this.state.ratings}</span>
                 </div>
                 </div>
                 </div>

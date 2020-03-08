@@ -14,22 +14,27 @@ class App extends React.Component {
      user: null 
  }
  sendRequest = (title) => {
-  var req = unirest("GET", "https://imdb8.p.rapidapi.com/title/find");
-  req.query({
-    "q": title
 
-   });
-   req.headers({
-    "x-rapidapi-host": "imdb8.p.rapidapi.com",
-    "x-rapidapi-key": "GJnF3zwATmmshyz03tiXO7Rg13v6p1RDW2bjsnKV4XqoYfWoRj"
-   });
-   req.end((res) => {
-    if (res.error) throw new Error(res.error);
-    const movies = res.body.results;
-    
-    this.setState({movies});
-  });
+  var request = require("request");
+  var options = {
+    method: 'GET',
+    url: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
+    qs: {page: '1', r: 'json', s: title},
+    headers: {
+      'x-rapidapi-host': 'movie-database-imdb-alternative.p.rapidapi.com',
+      'x-rapidapi-key': 'GJnF3zwATmmshyz03tiXO7Rg13v6p1RDW2bjsnKV4XqoYfWoRj'
+    }
+  };
   
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+  
+    const object = JSON.parse(body);
+    const movies = object.Search;
+    console.log(movies);
+
+    this.setState({movies});
+  }.bind(this)); 
  }
  render() {
 
@@ -48,7 +53,7 @@ class App extends React.Component {
 
         // eslint-disable-next-line array-callback-return
         this.state.movies.map((movie) => {
-          if(movie.image && movie.title ){
+          if(movie.Title && movie.imdbID){
             return <Movie {...movie}/>
           }
         })

@@ -5,24 +5,24 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 class Movie extends React.Component {
    render() {
-       const {title, id,image, year} = this.props;
+       const {Title, imdbID, Poster, Year} = this.props;
        return (
            <Card style={{ width: '18rem', backgroundColor: '#282c34' }} className="movie">
                <Card.Body>
                 <div className="title-year">
-                    <Card.Title className="title">{title}</Card.Title>
-                    <Card.Subtitle className="year">{year}</Card.Subtitle>
+                    <Card.Title className="title">{Title}</Card.Title>
+                    <Card.Subtitle className="year">{Year}</Card.Subtitle>
                 </div>
                </Card.Body>
 
-                   <Card.Img src={image.url} alt="my movie poster"/>
+                   <Card.Img src={Poster} alt="my movie poster"/>
                    <Link to={{
-                            pathname: `movies${id}`,
+                            pathname: `movies/${imdbID}`,
                             state: {
-                                title: {title},
-                                id: {id},
-                                image: {image}, 
-                                year: {year}
+                                title: {Title},
+                                imdbID: {imdbID},
+                                image: {Poster}, 
+                                year: {Year}
                             }
                     }}>
                         <Button className="chatbutton">
