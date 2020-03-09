@@ -8,10 +8,11 @@
    align-items: center;
 }
  
+
 .title, .year {
    font-weight: bold;
 }
- 
+
 .poster img{
    border-radius: 5%;
    width: auto;

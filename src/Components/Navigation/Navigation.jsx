@@ -21,7 +21,7 @@ class Navigation extends React.Component {
     // } = this.props;
 
      return (
-      <Navbar bg="dark" variant="dark" className="navbar">
+      <Navbar className="navbar">
       <Navbar.Brand href="/">
         <img
           src={require('../../movietalk.png')} 

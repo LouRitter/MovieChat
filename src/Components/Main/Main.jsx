@@ -51,7 +51,7 @@ class Main extends React.Component {
    render() {
         return (
             
-            <div className="bg">
+            <div className="bg2">
 
             <Navigation user={this.state.user} login = {this.login} logout = {this.logout} >
             

@@ -15,7 +15,7 @@ class Chat extends React.Component {
         id: "",
         genres: "",
         ratings: "",
-        showMore: false,
+        showMore: true,
 
     }
     sendRequest = (imdbID) => {
@@ -71,7 +71,7 @@ class Chat extends React.Component {
         }else{
             shortPlot = this.state.plotOutline.text;
         }
-
+        
         return (
             <div className = "Chat">
                 <Jumbotron className="Jumbo">
@@ -81,7 +81,11 @@ class Chat extends React.Component {
                 <img className='poster' src={this.state.image} alt="poster"/>
                 </div>
                 <div className='col-md-8'>
-                <h1>{title} ({this.state.year}) </h1>
+                    <div className="row">
+                    <h1>{title}</h1>
+                    <h3 className="movieyear">({this.state.year})</h3>
+                    </div>
+
                 <div className="row plotRow">
                 {this.state.showMore ? ( 
 
@@ -91,7 +95,7 @@ class Chat extends React.Component {
 
                 ) : (
                     <span className ="details" >{shortPlot} 
-                    <Button className="dots" onClick={this.handleToggleClick}>...</Button>
+                    <Button className="dots" onClick={this.handleToggleClick}>Info</Button>
                     </span>
                 )}
                 </div>
@@ -103,7 +107,7 @@ class Chat extends React.Component {
                 </div>
 
                 </Jumbotron>
-                <Comments></Comments>
+                <Comments movieid = {this.props.location.state.imdbID.imdbID}></Comments>
             </div>
         );
 

@@ -1,10 +1,8 @@
-html{
-  background-color: #1C3144;
-}
+
 
 .App {
   text-align: center;
-  background-color: #1C3144;
+
 }
 
 .App-logo {
@@ -29,10 +27,9 @@ html{
   color: #D8CBC7;
   margin-bottom: 10px;
   background-color: rgba(30, 30, 30, 0.4) !important;
-  margin: 5%;
-  border-radius: 10px;
-  border-color: rgb(184, 115, 11) !important ;
-  border: solid;
+  -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+  -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+  box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
 }
 
 .App-link {

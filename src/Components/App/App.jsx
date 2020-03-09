@@ -42,12 +42,12 @@ class App extends React.Component {
 
      <div className="App">
    
-       <header className="App-header">
+       <Jumbotron className="App-header">
       <h1>Search For A Movie</h1>
       <Search handleSendRequest={this.sendRequest}/>
 
 
-       </header>
+       </Jumbotron>
        <CardColumns>
        {
 

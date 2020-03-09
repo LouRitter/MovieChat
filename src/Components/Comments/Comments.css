@@ -1,3 +1,26 @@
 .Comments{
     background-color: rgba(30, 30, 30, 0.4) ;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(30, 30, 30, 0.4) !important;
+    -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+}
+.commentbox{
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 5px;
+    background-color: rgba(30, 30, 30, 0.4) !important;
+    -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+}
+.replybox{
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(30, 30, 30, 0.4) !important;
+    -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
 }
