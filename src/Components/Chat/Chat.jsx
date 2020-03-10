@@ -55,9 +55,10 @@ class Chat extends React.Component {
       }
 
     componentDidMount(){
-        var id = this.props.location.state.imdbID;
+        var id = this.props.match.params.id
+
         console.log(id)
-        this.sendRequest(id.imdbID);
+        this.sendRequest(id);
     }
 
     render() {
@@ -80,7 +81,7 @@ class Chat extends React.Component {
                 <div className="imgholder col-md-4">
                 <img className='poster' src={this.state.image} alt="poster"/>
                 </div>
-                <div className='col-md-8'>
+                <div className='col-md-8 movietext'>
                     <div className="row">
                     <h1>{title}</h1>
                     <h3 className="movieyear">({this.state.year})</h3>
@@ -107,7 +108,7 @@ class Chat extends React.Component {
                 </div>
 
                 </Jumbotron>
-                <Comments movieid = {this.props.location.state.imdbID.imdbID}></Comments>
+                <Comments movieid = {this.props.match.params.id}></Comments>
             </div>
         );
 

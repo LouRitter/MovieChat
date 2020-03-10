@@ -21,6 +21,9 @@
     background-color: transparent !important;
     border-color: rgb(184, 115, 11) !important ;
   }
+  .movietext{
+    padding-left: 40px;
+  }
   .movieyear{
     margin-top: 10px;
     margin-left: 5px;
