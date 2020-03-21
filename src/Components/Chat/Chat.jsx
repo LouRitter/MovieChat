@@ -52,7 +52,7 @@ class Chat extends React.Component {
         this.setState(state => ({
           showMore: !state.showMore
         }));
-      }
+    }
 
     componentDidMount(){
         var id = this.props.match.params.id
@@ -82,7 +82,7 @@ class Chat extends React.Component {
                 <img className='poster' src={this.state.image} alt="poster"/>
                 </div>
                 <div className='col-md-8 movietext'>
-                    <div className="row">
+                    <div className="row titlerow">
                     <h1>{title}</h1>
                     <h3 className="movieyear">({this.state.year})</h3>
                     </div>

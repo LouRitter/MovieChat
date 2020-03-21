@@ -5,8 +5,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 class Movie extends React.Component {
    render() {
-       const {Title, imdbID, Poster, Year} = this.props;
+       let {Title, imdbID, Poster, Year} = this.props;
+       if (Poster === "N/A"){
+            Poster = 'https://via.placeholder.com/300x450'
+        }
        return (
+
            <Card style={{ width: '18rem', backgroundColor: '#282c34' }} className="movie">
                <Card.Body>
                 <div className="title-year">
