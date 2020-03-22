@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/MovieChat/static/css/main.ccf7452e.chunk.css",
-    "main.js": "/MovieChat/static/js/main.edb35326.chunk.js",
-    "main.js.map": "/MovieChat/static/js/main.edb35326.chunk.js.map",
-    "runtime-main.js": "/MovieChat/static/js/runtime-main.0bdc3bb8.js",
-    "runtime-main.js.map": "/MovieChat/static/js/runtime-main.0bdc3bb8.js.map",
-    "static/css/2.47e06e2e.chunk.css": "/MovieChat/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.e0b15124.chunk.js": "/MovieChat/static/js/2.e0b15124.chunk.js",
-    "static/js/2.e0b15124.chunk.js.map": "/MovieChat/static/js/2.e0b15124.chunk.js.map",
-    "index.html": "/MovieChat/index.html",
-    "precache-manifest.bcbca78ff1637fa7ebb4a64bbd2c2c91.js": "/MovieChat/precache-manifest.bcbca78ff1637fa7ebb4a64bbd2c2c91.js",
-    "service-worker.js": "/MovieChat/service-worker.js",
-    "static/css/2.47e06e2e.chunk.css.map": "/MovieChat/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.ccf7452e.chunk.css.map": "/MovieChat/static/css/main.ccf7452e.chunk.css.map",
-    "static/js/2.e0b15124.chunk.js.LICENSE.txt": "/MovieChat/static/js/2.e0b15124.chunk.js.LICENSE.txt",
-    "static/media/movietalk.png": "/MovieChat/static/media/movietalk.05b8fd20.png"
+    "main.css": "/static/css/main.5e931a67.chunk.css",
+    "main.js": "/static/js/main.43edfb59.chunk.js",
+    "main.js.map": "/static/js/main.43edfb59.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.92d090bc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.92d090bc.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.a01d6ef6.chunk.js": "/static/js/2.a01d6ef6.chunk.js",
+    "static/js/2.a01d6ef6.chunk.js.map": "/static/js/2.a01d6ef6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e4505e1bece1b36f465ee4d9bfbe2bb2.js": "/precache-manifest.e4505e1bece1b36f465ee4d9bfbe2bb2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.5e931a67.chunk.css.map": "/static/css/main.5e931a67.chunk.css.map",
+    "static/js/2.a01d6ef6.chunk.js.LICENSE.txt": "/static/js/2.a01d6ef6.chunk.js.LICENSE.txt",
+    "static/media/movietalk.png": "/static/media/movietalk.05b8fd20.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.0bdc3bb8.js",
+    "static/js/runtime-main.92d090bc.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.e0b15124.chunk.js",
-    "static/css/main.ccf7452e.chunk.css",
-    "static/js/main.edb35326.chunk.js"
+    "static/js/2.a01d6ef6.chunk.js",
+    "static/css/main.5e931a67.chunk.css",
+    "static/js/main.43edfb59.chunk.js"
   ]
 }
