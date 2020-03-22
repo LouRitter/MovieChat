@@ -30,7 +30,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "http://louritter.github.io/",
+  "homepage": "http://louritter.github.io/MovieChat",
   "browserslist": {
     "production": [
       ">0.2%",
