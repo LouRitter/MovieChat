@@ -58,7 +58,7 @@ class Main extends React.Component {
             </Navigation>
             <BrowserRouter>
             <Switch>
-            <Route exact path="/" component={App} />
+            <Route exact path="/MovieChat" component={App} />
             <Route path="/movies/:id" component={Chat} />
             </Switch>
 
