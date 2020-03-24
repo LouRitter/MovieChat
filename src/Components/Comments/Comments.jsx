@@ -59,7 +59,28 @@ class Comments extends React.Component {
       .doc(this.props.movieid)
       .collection("comments")
       .add(cmnt);
-      alert("You are submitting " + this.state.comment);
+
+      db
+      .collection('MovieComments')
+      .doc(this.props.movieid)
+      .collection("comments");
+        auth.onAuthStateChanged((user) => {
+          if (user) {
+            console.log(user);
+            this.setState({ user });
+          } 
+        });
+        db.collection("MovieComments")
+        .doc(this.props.movieid)
+        .collection("comments")
+        .get()
+        .then(querySnapshot => {
+          const comments = querySnapshot.docs.map(doc => doc.data());
+          console.log(comments);
+          this.setState({ comments });
+          
+
+        });
     }
 
     handleChange = e => {
