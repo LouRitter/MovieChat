@@ -49,9 +49,9 @@ class Navigation extends React.Component {
         <Navbar.Text className ="accounttext">
     
         {this.props.user ?
-          <button className="signinout" onClick={handleShow}>Log Out</button>                
+          <button className="signinout" onClick={this.props.logout}>Log Out</button>                
           :
-          <button className="signinout" onClick={handleShow}>Log In</button>              
+          <button className="signinout" onClick={this.props.login}>Log In</button>              
         }
         </Navbar.Text>
     
