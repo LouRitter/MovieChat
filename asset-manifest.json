@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/MovieChat/static/css/main.5e931a67.chunk.css",
+    "main.css": "/MovieChat/static/css/main.78d18ad2.chunk.css",
     "main.js": "/MovieChat/static/js/main.44deec9e.chunk.js",
     "main.js.map": "/MovieChat/static/js/main.44deec9e.chunk.js.map",
     "runtime-main.js": "/MovieChat/static/js/runtime-main.0bdc3bb8.js",
@@ -9,10 +9,10 @@
     "static/js/2.f615c3bc.chunk.js": "/MovieChat/static/js/2.f615c3bc.chunk.js",
     "static/js/2.f615c3bc.chunk.js.map": "/MovieChat/static/js/2.f615c3bc.chunk.js.map",
     "index.html": "/MovieChat/index.html",
-    "precache-manifest.086d3e1234b983c9f2d5ed57662e4afb.js": "/MovieChat/precache-manifest.086d3e1234b983c9f2d5ed57662e4afb.js",
+    "precache-manifest.d46b3d270a3acfe09989ac46b000bcbd.js": "/MovieChat/precache-manifest.d46b3d270a3acfe09989ac46b000bcbd.js",
     "service-worker.js": "/MovieChat/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/MovieChat/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.5e931a67.chunk.css.map": "/MovieChat/static/css/main.5e931a67.chunk.css.map",
+    "static/css/main.78d18ad2.chunk.css.map": "/MovieChat/static/css/main.78d18ad2.chunk.css.map",
     "static/js/2.f615c3bc.chunk.js.LICENSE.txt": "/MovieChat/static/js/2.f615c3bc.chunk.js.LICENSE.txt",
     "static/media/movietalk.png": "/MovieChat/static/media/movietalk.05b8fd20.png"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.0bdc3bb8.js",
     "static/css/2.47e06e2e.chunk.css",
     "static/js/2.f615c3bc.chunk.js",
-    "static/css/main.5e931a67.chunk.css",
+    "static/css/main.78d18ad2.chunk.css",
     "static/js/main.44deec9e.chunk.js"
   ]
 }

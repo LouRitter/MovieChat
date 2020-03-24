@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/MovieChat/precache-manifest.086d3e1234b983c9f2d5ed57662e4afb.js"
+  "/MovieChat/precache-manifest.d46b3d270a3acfe09989ac46b000bcbd.js"
 );
 
 self.addEventListener('message', (event) => {
