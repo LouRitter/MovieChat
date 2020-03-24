@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bde0b59365e252f00fb2ac534f5d9223",
+    "revision": "11f8354e295922224f485e23a0cd8e48",
     "url": "/MovieChat/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MovieChat/static/css/2.47e06e2e.chunk.css"
   },
   {
-    "revision": "27c765bf0f69ccc580e8",
+    "revision": "96e90c9b9faeb4748877",
     "url": "/MovieChat/static/css/main.5e931a67.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MovieChat/static/js/2.f615c3bc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "27c765bf0f69ccc580e8",
-    "url": "/MovieChat/static/js/main.f0eac684.chunk.js"
+    "revision": "96e90c9b9faeb4748877",
+    "url": "/MovieChat/static/js/main.44deec9e.chunk.js"
   },
   {
     "revision": "73522bfef58dabcedaca",
