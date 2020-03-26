@@ -15,11 +15,13 @@ class Comments extends React.Component {
         this.state = {
           user: null,
           comments: [],  
-          
+          ref: {}
         }
 
     }
     componentDidMount() {
+      console.log(this.props.movieid);
+
       const ref = db
       .collection('MovieComments')
       .doc(this.props.movieid)
@@ -37,7 +39,13 @@ class Comments extends React.Component {
         .then(querySnapshot => {
           console.log(querySnapshot.docs)
           const comments = querySnapshot.docs.map(doc => doc.data());
+          for (var i = 0; i < comments.length; i++){
+            comments[i].id = querySnapshot.docs[i].id;
+
+          }
+          console.log(comments);
           this.setState({ comments });
+          
         });
         
     }
@@ -52,7 +60,7 @@ class Comments extends React.Component {
       cmnt.comment = this.state.comment;
       cmnt.userid = this.state.user.displayName;
       cmnt.replies = [];
-
+      
       db.collection("MovieComments")
       .doc(this.props.movieid)
       .collection("comments")
@@ -65,19 +73,29 @@ class Comments extends React.Component {
     };
 
     submitReply(comment){
+      console.log(this.props.movieid);
       const replies = comment.replies;
+      const movies = this.props.movieid;
       console.log(comment)
-      db.collection("MovieComments")
+      const ref = db.collection("MovieComments")
       .doc(this.props.movieid)
       .collection("comments")
       .get()
       .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            var replyRef = db.collection("comments").doc(doc.id);
-            console.log(replyRef);
-            return replyRef.update({
-                comment: comment
-            });
+          console.log(ref);
+            var replyRef = db.collection("MovieComments")
+            .doc(movies)
+            .collection("comments").doc(doc.id);
+           
+           
+            if(replyRef.id === comment.id){
+              console.log(replyRef);
+              return replyRef.update({
+                  replies: comment.replies
+              });
+            }
+
         });
     });
     }

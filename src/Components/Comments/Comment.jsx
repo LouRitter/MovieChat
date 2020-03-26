@@ -29,7 +29,7 @@ class Comment extends React.Component {
         // .doc(this.props.movieid)
         // .collection("comments")
         // .add(cmnt);
-        // this.forceUpdate();
+        this.forceUpdate();
 
       }
   
