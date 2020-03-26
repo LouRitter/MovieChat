@@ -27,10 +27,11 @@
     box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
 }
 .replybox{
+    margin-top: 20px;
     border-radius: 5px;
     padding: 20px;
-    background-color: rgba(30, 30, 30, 0.4) !important;
-    -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    background-color: rgba(30, 30, 30, 0.35) !important;
+    /* -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
     -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-    box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+    box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92); */
 }

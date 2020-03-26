@@ -5,8 +5,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import firebase, { auth, provider, db } from "../../firebaseConfig.js"
 import Form from 'react-bootstrap/Form';
-
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import Comment from './Comment';
 
 class Comments extends React.Component {
   
@@ -14,11 +14,14 @@ class Comments extends React.Component {
         super();
         this.state = {
           user: null,
-          comments: [],           
+          comments: [],  
+          ref: {}
         }
 
     }
     componentDidMount() {
+      console.log(this.props.movieid);
+
       const ref = db
       .collection('MovieComments')
       .doc(this.props.movieid)
@@ -26,7 +29,6 @@ class Comments extends React.Component {
       this.setState({ref});
         auth.onAuthStateChanged((user) => {
           if (user) {
-            console.log(user);
             this.setState({ user });
           } 
         });
@@ -35,15 +37,19 @@ class Comments extends React.Component {
         .collection("comments")
         .get()
         .then(querySnapshot => {
+          console.log(querySnapshot.docs)
           const comments = querySnapshot.docs.map(doc => doc.data());
+          for (var i = 0; i < comments.length; i++){
+            comments[i].id = querySnapshot.docs[i].id;
+
+          }
           console.log(comments);
           this.setState({ comments });
           
-
         });
-
         
     }
+
 
     submitCommentHandler = (event) => {
       event.preventDefault();
@@ -54,19 +60,45 @@ class Comments extends React.Component {
       cmnt.comment = this.state.comment;
       cmnt.userid = this.state.user.displayName;
       cmnt.replies = [];
-
+      
       db.collection("MovieComments")
       .doc(this.props.movieid)
       .collection("comments")
       .add(cmnt);
-      alert("You are submitting " + this.state.comment);
+
     }
 
     handleChange = e => {
       this.setState({comment: e.target.value});
     };
 
+    submitReply(comment){
+      console.log(this.props.movieid);
+      const replies = comment.replies;
+      const movies = this.props.movieid;
+      console.log(comment)
+      const ref = db.collection("MovieComments")
+      .doc(this.props.movieid)
+      .collection("comments")
+      .get()
+      .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          console.log(ref);
+            var replyRef = db.collection("MovieComments")
+            .doc(movies)
+            .collection("comments").doc(doc.id);
+           
+           
+            if(replyRef.id === comment.id){
+              console.log(replyRef);
+              return replyRef.update({
+                  replies: comment.replies
+              });
+            }
 
+        });
+    });
+    }
 
     render() {
 
@@ -92,22 +124,15 @@ class Comments extends React.Component {
           <div className="commentlistbox">
           <h3>Comments</h3>
                 {this.state.user ?
+                
                     <div>
-                      {this.state.comments.map((comment, key) =>(
-                        <div className="commentbox">
-                            <h4> {comment.userid}</h4>
-                            <span key={key}>{comment.comment}</span>
-                            {comment.replies.map((reply, key) =>(
-                              <div className="replybox">
-                              <h5>{reply.userid}</h5>
-                              <span>{reply.comment}</span>
-                              </div>
-                            ))}
-                        </div>
+                      <div>
+                      {this.state.comments.map(function(comment) {
+                        
+                        return <Comment parent={comment} submitReply={this.submitReply.bind(this) } db={db} movieid={this.props.movieid} user={this.state.user} comment={comment}/>
+                      }.bind(this))}
+                      </div>
 
-                      ))
-                      
-                      }
 
                     </div>
                   :
