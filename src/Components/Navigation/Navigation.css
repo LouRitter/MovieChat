@@ -1,28 +1,31 @@
-.navbar{
+.navbar {
   background-color: rgba(30, 30, 30, 0.4) !important;
-  -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-  -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-  box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
+  -webkit-box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+  -moz-box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+  box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
 }
 
-.signinout{
-    background-color: transparent;
-    border: solid;
-    border-width: 1px;
-    border-color: rgb(214, 214, 214) !important ;
-    border-radius: 5px;
-    color: white;
-    background-color: rgba(30, 30, 30, 0.4) !important;
-    -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-    -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-    box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-  }
-  .logo{
-    width: 200px;
-  }
-  .accounttext a{
-    color:white;
-  }
-  /* .navbar{
+.signinout {
+  background-color: transparent;
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(214, 214, 214) !important;
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(30, 30, 30, 0.4) !important;
+  -webkit-box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+  -moz-box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+  box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+}
+
+.logo {
+  width: 200px;
+}
+
+.accounttext a {
+  color: white;
+}
+
+/* .navbar{
     border-bottom: solid rgb(184, 115, 11) !important ;
   } */

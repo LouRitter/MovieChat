@@ -6,6 +6,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 
 class Chat extends React.Component {
+    
     handleToggleClick = this.handleToggleClick.bind(this);
     state = {
         title: "",

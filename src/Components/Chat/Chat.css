@@ -1,68 +1,79 @@
+.Jumbo {
+  background-color: rgba(30, 30, 30, 0.4) !important;
+  -webkit-box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+  -moz-box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+  box-shadow: 10px 20px 38px -12px rgba(0, 0, 0, 0.92);
+}
 
-  .Jumbo{
-    background-color: rgba(30, 30, 30, 0.4) !important;
-    -webkit-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-    -moz-box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-    box-shadow: 10px 20px 38px -12px rgba(0,0,0,0.92);
-  }
-  .Chat {
-    margin: 0 5%;
-    margin-top: 30px;
-    color: floralwhite;
-    padding-bottom: 30px;
+.Chat {
+  margin: 0 5%;
+  margin-top: 30px;
+  color: floralwhite;
+  padding-bottom: 30px;
 
-  }
-  .Chat h1{
-    padding-bottom: 30px;
-  }
-  .dots{
-    font-size: 8px !important;
-    margin-left: 5px;
-    background-color: transparent !important;
-    border-color: rgb(214, 214, 214) !important ;
-  }
-  .movietext{
-    padding-left: 40px;
-  }
-  .titlerow{
-    margin-left: 0 !important;
-  }
-  .movieyear{
-    margin-top: 10px;
-    margin-left: 5px;
-  }
-  .showMoreButton{
-    font-size: 8px !important;
-    margin-left: 5px;
-    background-color: transparent !important;
-    border: solid;
-    border-width: 1px;
-    border-color: rgb(214, 214, 214) !important ;
-    border-radius: 5px;
-    color: white;  
-  }
-  .poster{
-      border-radius: 5%;
-      width: auto;
-      max-height: 100%;
-  }
-  .details{
-    padding-bottom: 30px;
-  }
-  .genre{
-    display: inline !important;
-  }
-  .plotRow{
-    margin-left:0 !important;
-    margin-right: 100px !important;
-  }
-  .genreList{
-    float:left;
-  }
+}
 
-  .imgholder{
-    max-height: 400px;
-    padding-bottom: 20px;
-    text-align: center;
-    max-height: auto;
-  }
+.Chat h1 {
+  padding-bottom: 30px;
+}
+
+.dots {
+  font-size: 8px !important;
+  margin-left: 5px;
+  background-color: transparent !important;
+  border-color: rgb(214, 214, 214) !important;
+}
+
+.movietext {
+  padding-left: 40px;
+}
+
+.titlerow {
+  margin-left: 0 !important;
+}
+
+.movieyear {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.showMoreButton {
+  font-size: 8px !important;
+  margin-left: 5px;
+  background-color: transparent !important;
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(214, 214, 214) !important;
+  border-radius: 5px;
+  color: white;
+}
+
+.poster {
+  border-radius: 5%;
+  width: auto;
+  max-height: 100%;
+}
+
+.details {
+  padding-bottom: 30px;
+}
+
+.genre {
+  display: inline !important;
+}
+
+.plotRow {
+  margin-left: 0 !important;
+  margin-right: 100px !important;
+}
+
+.genreList {
+  float: left;
+}
+
+.imgholder {
+  max-height: 400px;
+  padding-bottom: 20px;
+  text-align: center;
+  max-height: auto;
+}
